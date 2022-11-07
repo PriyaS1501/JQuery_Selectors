@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>jQuery Selectors</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>jQuery Selectors</h1>
+
+        <p id="para1">This is paragraph 1</p>
+        <p id="para2">This is paragraph 2</p>
+        <p id="para3">This is paragraph 3</p>
+        <p id="para4">This is paragraph 4</p>
+        <hr>
+        <div class="div1">This is Div1</div>
+        <div class="div2">This is Div2</div>
+        <div class="div3">This is Div3</div>
+    </div>
+    <script src='scripts/jquery-3.6.1.js'></script>
+    <script>
+        // we need to make sure that our JS code does not run until the document is ready 
+        $(document).ready(function () {
+            console.log("Document is ready...")
+
+            //*************** (Element Selector) *****************************
+
+            // event on clicking the paragraph 
+            $('p').click(function () {
+                console.log("paragraph clicked")
+                // $(this).hide(function () {
+                //   console.log("paragraph clicked and hide")
+                //})
+            })
+
+            //event on clicking the div 
+            $('.div1').click(function () {
+                console.log("Div Clicked")
+                //$('p').show()
+                $(this).css({
+                    "background-color": "yellow",
+                    "color": "red"
+                })
+            })
+
+            //*************** (id Selector) *****************************
+            $('#para1').click(function () {
+                console.log("para 1 is selected")
+                $(this).css("color", "blue")
+            })
+            $('#para2').click(function () {
+                console.log("para 1 is selected")
+                $(this).css("background-color", "orange")
+            })
+
+            //*************** (class Selector) *****************************
+            $('.div1').css({
+                "font-size": "25px",
+                "color": "white",
+                "background-color": "black"
+            })
+
+            $('.div2').click(function () {
+                $(this).css({
+                    "background-color": "green",
+                    "color": "white"
+                })
+            })
+
+
+        })
+
+    </script>
+
+</body>
+
+</html>
